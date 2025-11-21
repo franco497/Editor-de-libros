@@ -1,12 +1,14 @@
 {
-  "name": "proecto-convertir-libro",
+  "name": "proyecto-convertir-libro",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Conversor de documentos Word a 2 columnas",
+  "main": "convertidor.js",
   "scripts": {
+    "start": "node convertidor.js",
+    "convertir": "node convertidor.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": ["word", "doc", "columns", "converter", "mammoth"],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
@@ -14,6 +16,7 @@
     "docxtemplater": "^3.67.5",
     "express": "^5.1.0",
     "fs-extra": "^11.3.2",
+    "mammoth": "^1.11.0",
     "pizzip": "^3.2.0"
   }
 }
