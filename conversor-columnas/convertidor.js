@@ -79,120 +79,72 @@ class ConvertidorColumnas {
     return `<!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Harary Keith - Sueños Lúcidos en 30 Días - 2 Columnas</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
+<meta charset="UTF-8">
+<title>Libro - 2 Columnas</title>
+
+<style>
+    body {
+        font-family: "Times New Roman", serif;
+        background: #eee;
+        padding: 30px 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .pagina {
+        width: 210mm;       /* Tamaño A4 */
+        min-height: 297mm;
+        padding: 25mm;
+        background: white;
+        box-shadow: 0 0 8px rgba(0,0,0,0.2);
+        column-count: 2;
+        column-gap: 20mm;
+        column-rule: 1px solid #bbb;
+        font-size: 12pt;
+        text-align: justify;
+        line-height: 1.4;
+    }
+
+    p {
+        margin-bottom: 12px;
+        text-indent: 1.5em;     /* Sangría de primera línea */
+    }
+
+    h1, h2, h3 {
+        column-span: all;
+        text-align: center;
+        margin: 20px 0 10px;
+        text-indent: 0;
+    }
+
+    h1 { font-size: 20pt; font-weight: bold; }
+    h2 { font-size: 16pt; font-style: italic; }
+    h3 { font-size: 14pt; }
+
+    img, table {
+        column-span: all;
+        display: block;
+        margin: 15px auto;
+        max-width: 100%;
+    }
+
+    @media print {
         body {
-            font-family: 'Times New Roman', Times, serif;
-            font-size: 12pt;
-            line-height: 1.6;
-            color: #000;
-            background: #fff;
-            padding: 20px;
+            background: white;
+            padding: 0;
         }
-        
-        .contenedor-columnas {
-            column-count: 2;
-            column-gap: 25px;
-            column-rule: 1px solid #ccc;
-            text-align: justify;
+        .pagina {
+            box-shadow: none;
+            margin: 0;
         }
-        
-        p {
-            margin-bottom: 12px;
-            text-align: justify;
-            orphans: 2; /* Mínimo de líneas al final de columna */
-            widows: 2;  /* Mínimo de líneas al inicio de columna */
-        }
-        
-        h1, h2, h3, h4, h5, h6 {
-            column-span: all; /* Los títulos ocupan ambas columnas */
-            margin: 20px 0 10px 0;
-            text-align: center;
-        }
-        
-        h1 {
-            font-size: 18pt;
-            margin-bottom: 30px;
-        }
-        
-        h2 {
-            font-size: 16pt;
-        }
-        
-        h3 {
-            font-size: 14pt;
-        }
-        
-        /* Mejoras para impresión */
-        @media print {
-            body {
-                padding: 10mm;
-                margin: 0;
-            }
-            
-            .contenedor-columnas {
-                column-gap: 15mm;
-            }
-            
-            @page {
-                margin: 20mm;
-            }
-        }
-        
-        /* Estilos para tablas e imágenes */
-        table, img {
-            max-width: 100%;
-            height: auto;
-        }
-        
-        table {
-            border-collapse: collapse;
-            margin: 10px 0;
-        }
-        
-        td, th {
-            border: 1px solid #000;
-            padding: 5px;
-            font-size: 11pt;
-        }
-        
-        /* Manejo de bloques de código o texto especial */
-        pre, code {
-            font-family: Consolas, monospace;
-            font-size: 11pt;
-            background: #f5f5f5;
-            padding: 5px;
-            border-radius: 3px;
-        }
-    </style>
+    }
+</style>
 </head>
+
 <body>
-    <div class="contenedor-columnas">
+    <div class="pagina">
         ${htmlContent}
     </div>
-    
-    <script>
-        // Script opcional para mejorar la visualización
-        document.addEventListener('DOMContentLoaded', function() {
-            // Asegurar que los párrafos tengan sangría
-            const paragraphs = document.querySelectorAll('p');
-            paragraphs.forEach(p => {
-                if (!p.style.textIndent && p.textContent.trim().length > 0) {
-                    p.style.textIndent = '1.5em';
-                }
-            });
-            
-            console.log('Documento formateado en 2 columnas listo');
-        });
-    </script>
 </body>
 </html>`;
   }
