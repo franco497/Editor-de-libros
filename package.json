@@ -8,15 +8,19 @@
     "convertir": "node convertidor.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["word", "doc", "columns", "converter", "mammoth"],
+  "keywords": [
+    "word",
+    "docx",
+    "pdf",
+    "columns",
+    "converter"
+  ],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
-    "docxtemplater": "^3.67.5",
-    "express": "^5.1.0",
     "fs-extra": "^11.3.2",
     "mammoth": "^1.11.0",
-    "pizzip": "^3.2.0"
+    "puppeteer": "^24.31.0"
   }
 }
